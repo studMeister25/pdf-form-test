@@ -2,7 +2,6 @@
 *.aux
 *.log
 *.out
-*.pdf
 *.synctex.gz
 
 # Byte-compiled / optimized / DLL files
