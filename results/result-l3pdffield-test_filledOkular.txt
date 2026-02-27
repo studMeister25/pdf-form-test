@@ -1,0 +1,18 @@
+File: LaTeX_form_l3pdffield/l3pdffield-test_filledOkular.pdf
+
+info-name: No value
+info-number: No value
+info-course: No value
+Apples-number: No value
+CinemaTickets-number: No value
+TextAreaTest-answer: No value
+SliderTest-test: No value
+CheckboxTest-option1: /Yes
+CheckboxTest-option2: /Off
+CheckboxTest-option3: /Yes
+DropTest-count_: Not available
+DropTest-count\_: 
+RadioButtonTest-test: /2
+RadioTest4-test: /0
+RadioTest3-test: 
+

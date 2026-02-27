@@ -1,0 +1,19 @@
+File: LaTeX_form_hyperref/hyperref-test_filledOkular.pdf
+
+info-name: Max Muster
+info-number: 12345
+info-course: 26KU
+Apples-number: 3
+CinemaTickets-number: 3
+TextAreaTest-answer: This test is as good as l3pdf.
+Choices don't work properly.
+SliderTest-test: 8
+CheckboxTest-option1: /Yes
+CheckboxTest-option2: /Off
+CheckboxTest-option3: /Yes
+DropTest-count_: 3
+DropTest-count\_: Not available
+RadioButtonTest-test: Not available
+RadioTest4-test: /\376\377\0001
+RadioTest3-test: 1
+

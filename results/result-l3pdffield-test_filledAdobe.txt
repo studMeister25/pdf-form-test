@@ -1,0 +1,18 @@
+File: LaTeX_form_l3pdffield/l3pdffield-test_filledAdobe.pdf
+
+info-name: Max Muster
+info-number: 12345
+info-course: 26KU
+Apples-number: 3
+CinemaTickets-number: 3
+TextAreaTest-answer: This test is good.Everything works fine.Textfields are black before clicking (but solves that they are hard to see on other viewers.)
+SliderTest-test: 8
+CheckboxTest-option1: /Yes
+CheckboxTest-option2: /Off
+CheckboxTest-option3: /Yes
+DropTest-count_: Not available
+DropTest-count\_: 3
+RadioButtonTest-test: /2
+RadioTest4-test: /0
+RadioTest3-test: 1
+

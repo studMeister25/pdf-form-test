@@ -1,0 +1,19 @@
+File: LaTeX_form_hyperref/hyperref-test_filledFirefox.pdf
+
+info-name: Max Muster
+info-number: 12345
+info-course: 26KU
+Apples-number: 3
+CinemaTickets-number: 3
+TextAreaTest-answer: This is good.
+It writes on multiple lines.
+SliderTest-test: 8
+CheckboxTest-option1: /Yes
+CheckboxTest-option2: /Off
+CheckboxTest-option3: /Yes
+DropTest-count_: Not available
+DropTest-count\_: 3
+RadioButtonTest-test: /2
+RadioTest4-test: /0
+RadioTest3-test: 1
+

@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper, total={16cm, 26cm}]{geometry}
+\usepackage{parskip}
+\usepackage{amsmath} % Equations
+\usepackage{amssymb} % Equations
+\usepackage{array} % required for text wrapping in tables
+\usepackage[export]{adjustbox}
+\usepackage{eforms}
+
+\title{Papierklausur-Vorlage}
+\author{Beispiel-Kurs, in dem diese Klausur stattfindet}
+\date{Hinweise wie beispielsweise zugelassene Hilfsmittel, Benotungsschlüssel, aber auch Belehrungen 
+können hier Platz finden}
+
+% puts the text to the right of the line if enough space
+% else on right side of a new line
+%%	#1: text to put to the right (here used for points)
+\newcommand\PointsSpacing[1]{{%
+	\unskip\nobreak\hfil\penalty50
+	\hskip2em\hbox{}\nobreak\hfil #1%
+	\parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+% PyRopeExercise command
+%%	#1: preamble
+%%	#2: problem
+%%	#3: max total score
+\newcommand{\PyRopeExercise}[3]{\item
+	\expandafter\ifx\expandafter\relax
+	\detokenize{#1}\relax\else #1 \\ \fi #2 %
+	\PointsSpacing{\rule{10pt}{0.4pt}~/ #3 P.}}
+
+\begin{document}
+\begin{Form}
+
+\noindent
+\begin{tabular}[h]{|>{\raggedright\arraybackslash}p{0.45\linewidth}|>{\raggedright\arraybackslash}p{0.15\linewidth}|>{\raggedright\arraybackslash}p{0.15\linewidth}|}
+     \hline Name: &  Mat.-Nr.: & Kurs: \\
+     \textField{info-name}{\linewidth}{16pt} &
+     \textField{info-number}{\linewidth}{16pt} &
+     \textField{info-course}{\linewidth}{16pt} \\ & & \\ \hline
+\end{tabular}
+\hfill
+\includegraphics[scale=1, valign=c]{assets/logo-pyrope-icon.png}
+
+% prevent title on new page
+{\let\newpage\relax\maketitle}
+
+\vspace{10pt}
+\hrule
+\vspace{10pt}
+
+\begin{enumerate}
+	\setlength{\itemsep}{11pt}
+
+    \PyRopeExercise{}{
+    If there are five apples and you take away three, how many do you have?
+
+\textField{Apples-number}{60pt}{14pt}
+}{1}
+\PyRopeExercise{}{
+    One grandmother, two mothers, two daughters and one granddaughter go to
+the cinema and buy one ticket each. How many tickets do they have to buy
+in total?
+
+\textField{CinemaTickets-number}{60pt}{14pt}
+}{1}
+\PyRopeExercise{}{
+    Write about your experience with this test.
+
+\textField{TextAreaTest-answer}{\linewidth}{8\baselineskip}
+}{2}
+\PyRopeExercise{}{
+    Which natural one digit number is the only one that starts and ends with
+an unique letter?
+
+\textField{SliderTest-test}{60pt}{14pt} [0; 9]
+}{1}
+\PyRopeExercise{}{
+    Choose all correct statements:
+
+\checkBox{CheckboxTest-option1}{10pt}{10pt}{CheckboxTest-option1} \(1 + 1 = 2\)
+
+\checkBox{CheckboxTest-option2}{10pt}{10pt}{CheckboxTest-option2} \(2^{0} = 2\)
+
+\checkBox{CheckboxTest-option3}{10pt}{10pt}{CheckboxTest-option3} All rational numbers are real.
+}{3}
+\PyRopeExercise{}{
+    This question has \comboBox{DropTest-count\_}{50pt}{14pt}{(2)(3)(4)} options.
+}{1}
+\PyRopeExercise{}{
+    What's the best way to improve your math skills?
+
+\radioButton{RadioButtonTest-test}{10pt}{10pt}{1} Quit school.
+
+\radioButton{RadioButtonTest-test}{10pt}{10pt}{2} Beg for wisdom.
+
+\radioButton{RadioButtonTest-test}{10pt}{10pt}{3} Lots of studying.
+}{1}
+\PyRopeExercise{}{
+    Choose the number that is NOT a prime.
+    
+    \radioButton{RadioTest4-test}{10pt}{10pt}{1} 1
+    
+    \radioButton{RadioTest4-test}{10pt}{10pt}{2} 2
+    
+    \radioButton{RadioTest4-test}{10pt}{10pt}{3} 3
+    
+    \radioButton{RadioTest4-test}{10pt}{10pt}{5} 5
+    
+    \radioButton{RadioTest4-test}{10pt}{10pt}{7} 7
+}{1}
+\PyRopeExercise{}{
+    ONE of these numbers is correct. Which is it?
+
+\comboBox{RadioTest3-test}{50pt}{14pt}{(1)(2)(3)(4)(5)(6)(7)(8)(9)}
+}{1}
+
+
+
+\end{enumerate}
+
+\end{Form}
+\end{document}

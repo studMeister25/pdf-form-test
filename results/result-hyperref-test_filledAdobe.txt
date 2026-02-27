@@ -1,0 +1,18 @@
+File: LaTeX_form_hyperref/hyperref-test_filledAdobe.pdf
+
+info-name: Max Muster
+info-number: 12345
+info-course: 26KU
+Apples-number: 3
+CinemaTickets-number: 3
+TextAreaTest-answer: Everything works fine.This is good.
+SliderTest-test: 8
+CheckboxTest-option1: /Yes
+CheckboxTest-option2: /Off
+CheckboxTest-option3: /Yes
+DropTest-count_: 3
+DropTest-count\_: Not available
+RadioButtonTest-test: /\376\377\000L\000o\000t\000s\000\040\000o\000f\000\040\000s\000t\000u\000d\000y\000i\000n\000g\000.
+RadioTest4-test: /\376\377\0001
+RadioTest3-test: 1
+

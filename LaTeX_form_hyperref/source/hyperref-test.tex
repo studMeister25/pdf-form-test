@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[a4paper, total={16cm, 26cm}]{geometry}
+\usepackage{parskip}
+\usepackage{amsmath} % Equations
+\usepackage{amssymb} % Equations
+\usepackage{array} % required for text wrapping in tables
+\usepackage[export]{adjustbox}
+\usepackage{hyperref}
+
+\title{Papierklausur-Vorlage}
+\author{Beispiel-Kurs, in dem diese Klausur stattfindet}
+\date{Hinweise wie beispielsweise zugelassene Hilfsmittel, Benotungsschlüssel, aber auch Belehrungen 
+können hier Platz finden}
+
+
+% Fix für fehlerhafte RadioButtons, siehe:
+% https://github.com/latex3/hyperref/issues/263#issuecomment-2896062470
+\makeatletter
+\newif\ifFld@continue
+\Fld@continuefalse
+\define@key{Field}{continue}[true]{%
+	\lowercase{\Field@boolkey{#1}}{continue}%
+}
+\patchcmd{\@@Radio}
+{\Fld@listcount=0}
+{\Fld@listcount=\ifFld@continue0\else1\fi}
+{\typeout{Patching of @@Radio succeeded.}}
+{\typeout{Patching of @@Radio failed.}}
+\makeatother
+
+
+% puts the text to the right of the line if enough space
+% else on right side of a new line
+%%	#1: text to put to the right (here used for points)
+\newcommand\PointsSpacing[1]{{%
+		\unskip\nobreak\hfil\penalty50
+		\hskip2em\hbox{}\nobreak\hfil #1%
+		\parfillskip=0pt \finalhyphendemerits=0 \par}}
+
+% PyRopeExercise command
+%%	#1: preamble
+%%	#2: problem
+%%	#3: max total score
+\newcommand{\PyRopeExercise}[3]{\item
+	\expandafter\ifx\expandafter\relax
+	\detokenize{#1}\relax\else #1 \\ \fi #2 %
+	\PointsSpacing{\rule{10pt}{0.4pt}~/ #3 P.}}
+
+\begin{document}
+\begin{Form}
+
+
+\noindent
+\begin{tabular}[h]{|>{\raggedright\arraybackslash}p{0.45\linewidth}|>{\raggedright\arraybackslash}p{0.15\linewidth}|>{\raggedright\arraybackslash}p{0.15\linewidth}|}
+     \hline Name: &  Mat.-Nr.: & Kurs: \\ \TextField[name=info-name, width=\linewidth]{} & \TextField[name=info-number, width=\linewidth]{} & \TextField[name=info-course, width=\linewidth]{} \\ & & \\ \hline
+\end{tabular}
+\hfill
+\includegraphics[scale=1, valign=c]{assets/logo-pyrope-icon.png}
+
+% prevent title on new page
+{\let\newpage\relax\maketitle}
+
+\vspace{10pt}
+\hrule
+\vspace{10pt}
+
+\begin{enumerate}
+	\setlength{\itemsep}{10pt}
+
+    \PyRopeExercise{}{
+    If there are five apples and you take away three, how many do you have?
+
+\TextField[name=Apples-number]{}
+}{1}
+\PyRopeExercise{}{
+    One grandmother, two mothers, two daughters and one granddaughter go to
+the cinema and buy one ticket each. How many tickets do they have to buy
+in total?
+
+\TextField[name=CinemaTickets-number]{}
+}{1}
+\PyRopeExercise{}{
+    Write about your experience with this test.
+
+\TextField[name=TextAreaTest-answer,height=8\baselineskip,width=\linewidth,multiline]{}
+}{2}
+\PyRopeExercise{}{
+    Which natural one digit number is the only one that starts and ends with
+an unique letter?
+
+\TextField[name=SliderTest-test]{} [0; 9]
+}{1}
+\PyRopeExercise{}{
+    Choose all correct statements:
+
+\CheckBox[name=CheckboxTest-option1]{} \(1 + 1 = 2\)
+
+\CheckBox[name=CheckboxTest-option2]{} \(2^{0} = 2\)
+
+\CheckBox[name=CheckboxTest-option3]{} All rational numbers are real.
+}{3}
+\PyRopeExercise{}{
+    This question has \ChoiceMenu[name=DropTest-count\_, combo]{}{2,3,4} options.
+}{1}
+\PyRopeExercise{}{
+    What's the best way to improve your math skills?
+
+\ChoiceMenu[name=RadioButtonTest-test, radio]{}{Quit school.,\\Beg for wisdom.,\\Lots of studying.}
+}{1}
+\PyRopeExercise{}{
+    Choose the number that is NOT a prime.
+
+\ChoiceMenu[name=RadioTest4-test, radio, continue]{}{1,\\2,\\3,\\5,\\7}
+}{1}
+\PyRopeExercise{}{
+    ONE of these numbers is correct. Which is it?
+
+\ChoiceMenu[name=RadioTest3-test, combo]{}{1,2,3,4,5,6,7,8,9}
+}{1}
+
+\end{enumerate}
+
+\end{Form}
+\end{document}
